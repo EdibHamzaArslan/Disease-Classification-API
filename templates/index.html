@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h3> Welcome to Disease predictor site.</h3>
+    <p> This is a sdsp project for bbm467</p>
+</div>
+{% from "includes/_formhelpers.html" import render_field %}
+<form action="{{ url_for('predict')}}" method=post>
+  <dl>
+    {{ render_field(form.name) }}
+    {{ render_field(form.feature_5) }}
+    {{ render_field(form.feature_27) }}
+    {{ render_field(form.feature_32) }}
+    {{ render_field(form.feature_37) }}
+    {{ render_field(form.feature_39) }}
+    {{ render_field(form.feature_40) }}
+    {{ render_field(form.feature_43) }}
+  </dl>
+  <button type="submit" class=" btn-primary btn-block btn-large">Predict Disease</button>
+</form>
+{% endblock %}
